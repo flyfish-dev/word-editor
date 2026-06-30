@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" role="img" aria-label="Flyfish Word Editor logo">
+  <defs>
+    <linearGradient id="logo-bg" x1="16" y1="12" x2="132" y2="146" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset=".46" stop-color="#185abd"/>
+      <stop offset="1" stop-color="#0b2f6f"/>
+    </linearGradient>
+    <linearGradient id="logo-paper" x1="70" y1="24" x2="112" y2="134" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#e9f4ff"/>
+    </linearGradient>
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#061b44" flood-opacity=".24"/>
+    </filter>
+  </defs>
+  <rect x="8" y="8" width="144" height="144" rx="34" fill="url(#logo-bg)"/>
+  <path d="M76 28h39l17 17v78a9 9 0 0 1-9 9H76a9 9 0 0 1-9-9V37a9 9 0 0 1 9-9Z" fill="url(#logo-paper)" filter="url(#logo-shadow)"/>
+  <path d="M115 29v15a4 4 0 0 0 4 4h13Z" fill="#cfe6ff"/>
+  <path d="M80 70h34M80 84h34M80 98h25" stroke="#87aee8" stroke-width="4" stroke-linecap="round"/>
+  <rect x="25" y="51" width="73" height="73" rx="18" fill="#185abd" filter="url(#logo-shadow)"/>
+  <path d="M39 68h8l4 27 6.7-27h7l6.7 27 4-27h8L75 109h-8.7l-5.1-23.1L56 109h-8.8Z" fill="#fff"/>
+  <path d="M34 42c12-12 29-14 46-7-13 3-24 10-31 20-6-4-11-8-15-13Z" fill="#7dd3fc" opacity=".9"/>
+  <text x="184" y="72" fill="#111827" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="43" font-weight="800">Flyfish Word Editor</text>
+  <text x="186" y="112" fill="#4b5563" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="500">Sealed WASM DOCX editor for local public beta validation</text>
+  <rect x="186" y="126" width="116" height="22" rx="11" fill="#e8f1ff"/>
+  <text x="202" y="142" fill="#185abd" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">localhost only</text>
+  <rect x="314" y="126" width="99" height="22" rx="11" fill="#ecfdf3"/>
+  <text x="331" y="142" fill="#15803d" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">public beta</text>
+  <rect x="425" y="126" width="92" height="22" rx="11" fill="#f5f3ff"/>
+  <text x="443" y="142" fill="#6d28d9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">WASM core</text>
+</svg>

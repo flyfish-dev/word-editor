@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="Flyfish Word Editor public beta badge">
+  <defs>
+    <linearGradient id="badge-bg" x1="0" y1="0" x2="480" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset=".55" stop-color="#185abd"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="120" rx="26" fill="url(#badge-bg)"/>
+  <circle cx="62" cy="60" r="34" fill="#fff" opacity=".16"/>
+  <path d="M41 48h8l4 24 6-24h6.6l6 24 4.1-24h8L77 82h-8.4l-6.2-23.3L56.1 82h-8.4Z" fill="#fff"/>
+  <text x="116" y="50" fill="#fff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">Flyfish Word Editor</text>
+  <text x="116" y="82" fill="#dbeafe" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Public Beta · localhost-only · sealed WASM core</text>
+</svg>

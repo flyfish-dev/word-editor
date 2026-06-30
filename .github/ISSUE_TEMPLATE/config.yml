@@ -9,3 +9,9 @@ contact_links:
   - name: 购买咨询
     url: https://github.com/flyfish-dev/word-editor/issues/new?template=purchase-intent.yml
     about: 商用授权、私有化部署、技术支持和定制需求。
+  - name: 飞鱼小铺
+    url: https://dev.flyfish.group/shop
+    about: 支持项目、购买服务和获取优先技术支持。
+  - name: 联系方式与交流群
+    url: https://github.com/flyfish-dev/word-editor#联系与支持
+    about: 查看客服微信、公众号、用户交流群和赞赏二维码。

@@ -16,6 +16,11 @@ const mimeTypes = new Map([
   [".txt", "text/plain; charset=utf-8"],
   [".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"],
   [".svg", "image/svg+xml"],
+  [".png", "image/png"],
+  [".jpg", "image/jpeg"],
+  [".jpeg", "image/jpeg"],
+  [".webp", "image/webp"],
+  [".ico", "image/x-icon"],
   [".wasm", "application/wasm"],
 ]);
 
@@ -50,7 +55,7 @@ const server = createServer((req, res) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`word-editor local WASM verification: http://${host}:${port}/`);
+  console.log(`Flyfish Word Editor local WASM preview: http://${host}:${port}/`);
   console.log("Press Ctrl+C to stop.");
 });
 

@@ -92,8 +92,8 @@ try {
   await import(mainUrl);
   await customElements.whenDefined("word-editor");
   await loadSampleDocument();
-  show("Local WASM verification runtime is ready.");
+  show("Flyfish Word Editor local WASM runtime is ready.");
 } catch (error) {
-  show(`Local WASM verification failed: ${error?.message || error}`, { sticky: true });
+  show(`Flyfish Word Editor local WASM failed: ${error?.message || error}`, { sticky: true });
   throw error;
 }

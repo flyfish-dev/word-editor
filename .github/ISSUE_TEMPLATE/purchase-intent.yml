@@ -9,6 +9,9 @@ body:
     attributes:
       value: |
         请留下基本需求。我们会根据场景评估授权、部署方式和支持计划。
+
+        - 飞鱼小铺: https://dev.flyfish.group/shop
+        - 客服微信、公众号、交流群二维码: https://github.com/flyfish-dev/word-editor#联系与支持
   - type: input
     id: organization
     attributes:
