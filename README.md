@@ -19,6 +19,10 @@
 </p>
 
 <p align="center">
+  <a href="README.md">简体中文</a> · <a href="README.en.md">English</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/flyfish-dev/word-editor"><img alt="Public beta" src="https://img.shields.io/badge/public%20beta-expanded%20repo-185abd" /></a>
   <img alt="Runtime" src="https://img.shields.io/badge/runtime-sealed%20WASM-0f766e" />
   <img alt="Access" src="https://img.shields.io/badge/access-localhost%20only-7c3aed" />

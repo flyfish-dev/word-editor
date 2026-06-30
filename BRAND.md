@@ -7,6 +7,12 @@
 - Repository: `flyfish-dev/word-editor`
 - Product category: browser-native DOCX editor
 
+## Language
+
+- Simplified Chinese README: `README.md`
+- English README: `README.en.md`
+- Local WASM preview supports `?lang=zh-CN` and `?lang=en`, with an in-page language switch.
+
 ## Logo Assets
 
 | Asset | Path | Usage |
