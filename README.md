@@ -25,7 +25,7 @@
   <img alt="Source maps" src="https://img.shields.io/badge/source%20maps-not%20published-b91c1c" />
   <img alt="Core payload" src="https://img.shields.io/badge/core%20payload-sealed-111827" />
   <a href="https://docx-editor.pages.dev/"><img alt="Official site" src="https://img.shields.io/badge/site-docx--editor.pages.dev-1d6fd6" /></a>
-  <a href="https://dev.flyfish.group/shop"><img alt="Flyfish shop" src="https://img.shields.io/badge/support-飞鱼小铺-f59e0b" /></a>
+  <a href="https://dev.flyfish.group/shop"><img alt="Flyfish shop" src="https://img.shields.io/badge/support-%E9%A3%9E%E9%B1%BC%E5%B0%8F%E9%93%BA-f59e0b" /></a>
 </p>
 
 ---
