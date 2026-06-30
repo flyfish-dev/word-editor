@@ -1,0 +1,23 @@
+{
+  "product": "word-editor",
+  "target": "local-wasm-verify",
+  "localOnly": true,
+  "buildId": "local-wasm-20260630075500",
+  "allowedOrigins": [
+    "http://127.0.0.1:*",
+    "http://localhost:*"
+  ],
+  "licenseId": "word-editor-local-wasm-20260630",
+  "licenseExpiresAt": "2026-07-30T07:55:06.000Z",
+  "sourceMapsPublished": false,
+  "sourceTypeDeclarationsPublished": false,
+  "corePayloadSealed": true,
+  "corePayloadFormat": "wasm-sealed-esm-bundles",
+  "ordinaryCoreModulesPublished": false,
+  "javascriptObfuscation": "esbuild-bundle+terser-module-compress-mangle+wasm-sealed-xor",
+  "payloadSha256": "7e8b99e560c523c9a66797156bd55615383021191ad7bb638f6bbfb01332121b",
+  "mainBundleBytes": 3577248,
+  "workerBundleBytes": 229865,
+  "wasmBytes": 3973661,
+  "builtAt": "2026-06-30T07:55:08.707Z"
+}

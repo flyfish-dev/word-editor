@@ -1,8 +1,8 @@
 # Public Beta Terms
 
-This repository distributes a free local preview package for `word-editor`.
+This repository distributes an expanded free local preview for `word-editor`.
 
-- The package is provided for evaluation, compatibility testing, and issue reporting.
+- The expanded WASM demo is provided for evaluation, compatibility testing, and issue reporting.
 - The runtime is limited to `http://localhost:*` and `http://127.0.0.1:*`.
 - Do not deploy the public beta package to a public server.
 - Do not bypass, modify, remove, or crack the runtime authorization gate.

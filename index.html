@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#185abd" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>word-editor local WASM verification</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #e6e6e6; }
+    word-editor { display: block; width: 100vw; height: 100vh; }
+    .boot {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 36px 42px 110px 1fr 28px;
+      color: #24292f;
+      font: 13px/1.4 "Segoe UI", system-ui, sans-serif;
+      background: #e6e6e6;
+    }
+    .titlebar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 0 14px;
+      background: #185abd;
+      color: #fff;
+    }
+    .mark {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+      background: rgba(255,255,255,.18);
+      font-weight: 700;
+    }
+    .title {
+      justify-self: center;
+      max-width: 44vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+    .actions span {
+      width: 54px;
+      height: 20px;
+      border-radius: 3px;
+      background: rgba(255,255,255,.22);
+    }
+    .tabs {
+      display: flex;
+      align-items: end;
+      gap: 28px;
+      padding: 0 30px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+    }
+    .tabs span {
+      padding-bottom: 10px;
+      border-bottom: 3px solid transparent;
+    }
+    .tabs span:first-child {
+      color: #185abd;
+      border-color: #185abd;
+      font-weight: 600;
+    }
+    .ribbon {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      padding: 14px 28px;
+      background: #fbfbfb;
+      border-bottom: 1px solid #d0d7de;
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+    }
+    .group {
+      width: 112px;
+      height: 72px;
+      border-right: 1px solid #d8dee8;
+      background:
+        linear-gradient(#0f6cbd, #0f6cbd) 8px 8px / 22px 22px no-repeat,
+        linear-gradient(#d8dee8, #d8dee8) 8px 42px / 74px 8px no-repeat,
+        linear-gradient(#e5e7eb, #e5e7eb) 8px 58px / 58px 7px no-repeat;
+      opacity: .92;
+    }
+    .stage {
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(520px, calc(100vw - 40px));
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid rgba(124,139,161,.42);
+      border-radius: 8px;
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 24px 64px rgba(15,23,42,.18), 0 2px 8px rgba(15,23,42,.08);
+    }
+    .card .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, #185abd, #0f6cbd);
+      color: #fff;
+      font-size: 20px;
+    }
+    .card strong { display: block; margin-bottom: 3px; color: #185abd; font-size: 14px; }
+    .card small { display: block; color: #57606a; font-size: 12px; }
+    .progress {
+      grid-column: 1 / -1;
+      height: 4px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e6edf7;
+    }
+    .progress span {
+      display: block;
+      width: 42%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #185abd, #0f6cbd, #4f9ce8);
+      animation: progress 1.15s ease-in-out infinite;
+    }
+    .status { min-height: 28px; border-top: 1px solid #d0d7de; background: #f3f3f3; }
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 38px;
+      z-index: 9999;
+      max-width: 420px;
+      padding: 10px 12px;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 12px 32px rgba(0,0,0,.18);
+      color: #24292f;
+      font: 12px/1.45 "Segoe UI", system-ui, sans-serif;
+    }
+    .toast[hidden] { display: none; }
+    @keyframes progress {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(240%); }
+    }
+  </style>
+</head>
+<body>
+  <word-editor id="editor" mode="edit" engine="ts" license-required license-feature="docx">
+    <div class="boot" role="status" aria-live="polite">
+      <div class="titlebar">
+        <span class="mark" aria-hidden="true">W</span>
+        <span class="title">word-editor local WASM verification</span>
+        <span class="actions" aria-hidden="true"><span></span><span></span></span>
+      </div>
+      <div class="tabs" aria-hidden="true"><span>Home</span><span>Insert</span><span>Layout</span><span>Review</span><span>View</span></div>
+      <div class="ribbon" aria-hidden="true"><span class="group"></span><span class="group"></span><span class="group"></span><span class="group"></span></div>
+      <div class="stage">
+        <div class="card">
+          <span class="mark" aria-hidden="true">W</span>
+          <span><strong>Preparing sealed runtime</strong><small>The editor core is loaded from the local WASM verification package.</small></span>
+          <span class="progress" aria-hidden="true"><span></span></span>
+        </div>
+      </div>
+      <div class="status" aria-hidden="true"></div>
+    </div>
+  </word-editor>
+  <div id="toast" class="toast" hidden></div>
+  <script type="module" src="/local-wasm-loader.mjs"></script>
+</body>
+</html>
