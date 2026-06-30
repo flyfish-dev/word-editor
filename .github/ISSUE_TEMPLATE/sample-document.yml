@@ -1,0 +1,53 @@
+name: 提交样例文档
+description: 提交用于提升 DOCX 渲染、编辑、保存兼容性的样例。
+title: "[Sample] "
+labels:
+  - sample
+  - compatibility
+  - public-beta
+body:
+  - type: markdown
+    attributes:
+      value: |
+        真实样例最能帮助我们提升产品。请只上传你有权分享的文档，并提前脱敏。
+  - type: textarea
+    id: sample-purpose
+    attributes:
+      label: 样例覆盖点
+      description: 这个文档主要用于验证什么能力？
+      placeholder: 复杂表格、分页、批注、图片环绕、页眉页脚、目录、脚注、修订等。
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: 参考效果
+      description: 请说明在 Word、WPS、OnlyOffice 或 Word Online 中的正确表现。可以附截图。
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: 当前公测 Demo 表现
+      description: 描述加载、渲染、编辑或保存后哪里不一致。
+    validations:
+      required: true
+  - type: input
+    id: source-app
+    attributes:
+      label: 文档来源
+      placeholder: Microsoft Word / WPS / LibreOffice / 系统导出 / 其他
+  - type: input
+    id: package
+    attributes:
+      label: 公测包 buildId 或 sha256
+      placeholder: local-wasm-20260630072907 / c1e4...
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 分享确认
+      options:
+        - label: 我拥有该样例的分享权限，或已删除所有敏感内容。
+          required: true
+        - label: 我同意项目维护者使用该样例改进兼容性和回归测试。
+          required: true

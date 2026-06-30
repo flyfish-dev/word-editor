@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 官网
+    url: https://docx-editor.pages.dev/
+    about: 查看 word-editor 官网、文档和在线 Demo。
+  - name: 在线 Demo
+    url: https://docx-editor.pages.dev/examples/demo/
+    about: 直接体验线上 Demo。
+  - name: 购买咨询
+    url: https://github.com/flyfish-dev/word-editor/issues/new?template=purchase-intent.yml
+    about: 商用授权、私有化部署、技术支持和定制需求。

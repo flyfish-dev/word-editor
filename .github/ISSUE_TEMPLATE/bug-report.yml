@@ -1,0 +1,62 @@
+name: 问题反馈
+description: 报告公测 WASM Demo 的加载、渲染、编辑、保存或兼容性问题。
+title: "[Bug] "
+labels:
+  - bug
+  - public-beta
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量提供可复现信息；如果文档包含敏感内容，请先脱敏或只描述问题。
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题概述
+      description: 简洁描述发生了什么，以及期望行为是什么。
+      placeholder: 打开某个 DOCX 后表格分页不一致；期望与 Word 中一致。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请写清楚从启动 Demo 到出现问题的步骤。
+      placeholder: |
+        1. 解压公测包
+        2. node serve-localhost.mjs
+        3. 打开 http://127.0.0.1:8789/
+        4. 加载 ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+      description: Word、WPS、OnlyOffice 或 Word Online 中的正确效果。
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 可以附截图、录屏或控制台报错。
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: 浏览器和系统
+      placeholder: Chrome 126 / macOS 15.5
+  - type: input
+    id: package
+    attributes:
+      label: 公测包 buildId 或 sha256
+      placeholder: local-wasm-20260630072907 / c1e4...
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 样例隐私确认
+      options:
+        - label: 我确认公开上传的截图或文档已脱敏，或不包含敏感信息。
+          required: true

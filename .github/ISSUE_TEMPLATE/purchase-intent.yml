@@ -1,0 +1,55 @@
+name: 购买咨询
+description: 商用授权、私有化部署、技术支持或定制需求咨询。
+title: "[Purchase] "
+labels:
+  - purchase-intent
+  - sales
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请留下基本需求。我们会根据场景评估授权、部署方式和支持计划。
+  - type: input
+    id: organization
+    attributes:
+      label: 公司或团队
+      placeholder: 公司名 / 团队名
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式
+      description: 邮箱、微信、电话或其他可联系渠道。
+      placeholder: name@example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: 计划部署方式
+      options:
+        - 公有云 Web 应用
+        - 私有化部署
+        - 离线/内网环境
+        - SDK/OEM 集成
+        - 暂不确定
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景
+      description: 例如合同编辑、OA 审批、知识库、教育文档、报告生成、协同编辑等。
+    validations:
+      required: true
+  - type: input
+    id: scale
+    attributes:
+      label: 预计规模
+      placeholder: 例如 20 个内部用户 / 5 万月活 / 每天 1 万份文档
+  - type: textarea
+    id: requirements
+    attributes:
+      label: 关键需求
+      placeholder: 授权方式、功能定制、格式兼容、SLA、源码/安全审计、私有字体、浏览器范围等。
