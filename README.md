@@ -13,7 +13,9 @@
 <p align="center">
   <a href="https://docx-editor.pages.dev/">官网</a> ·
   <a href="https://docx-editor.pages.dev/examples/demo/">在线 Demo</a> ·
+  <a href="https://docx-editor.pages.dev/examples/integration/">集成 Demo</a> ·
   <a href="https://docx-editor.pages.dev/docs/">文档</a> ·
+  <a href="https://docx-editor.pages.dev/downloads/word-editor-public-beta.zip">下载公测包</a> ·
   <a href="https://github.com/flyfish-dev/word-editor/issues/new/choose">反馈样例和问题</a> ·
   <a href="https://dev.flyfish.group/shop">飞鱼小铺</a>
 </p>
@@ -72,8 +74,10 @@ payloadSha256: 7e8b99e560c523c9a66797156bd55615383021191ad7bb638f6bbfb01332121b
 | --- | --- |
 | 官网 | [docx-editor.pages.dev](https://docx-editor.pages.dev/) |
 | 在线 Demo | [docx-editor.pages.dev/examples/demo](https://docx-editor.pages.dev/examples/demo/) |
+| 第三方集成 Demo | [docx-editor.pages.dev/examples/integration](https://docx-editor.pages.dev/examples/integration/) |
 | 文档 | [docx-editor.pages.dev/docs](https://docx-editor.pages.dev/docs/) |
 | 公测仓库 | [github.com/flyfish-dev/word-editor](https://github.com/flyfish-dev/word-editor) |
+| 下载公测包 | [docx-editor.pages.dev/downloads/word-editor-public-beta.zip](https://docx-editor.pages.dev/downloads/word-editor-public-beta.zip) |
 | 飞鱼小铺 | [dev.flyfish.group/shop](https://dev.flyfish.group/shop) |
 
 ## 购买与合作

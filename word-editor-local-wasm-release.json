@@ -2,6 +2,12 @@
   "product": "word-editor",
   "target": "local-wasm-verify",
   "localOnly": true,
+  "officialSite": "https://docx-editor.pages.dev/",
+  "officialOnlineDemo": "https://docx-editor.pages.dev/examples/demo/",
+  "officialIntegrationDemo": "https://docx-editor.pages.dev/examples/integration/",
+  "officialIntegrationDemoShortlink": "https://docx-editor.pages.dev/integration",
+  "publicBetaRepository": "https://github.com/flyfish-dev/word-editor",
+  "publicBetaDownloadZip": "https://docx-editor.pages.dev/downloads/word-editor-public-beta.zip",
   "buildId": "local-wasm-20260630075500",
   "allowedOrigins": [
     "http://127.0.0.1:*",

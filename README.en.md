@@ -13,7 +13,9 @@
 <p align="center">
   <a href="https://docx-editor.pages.dev/">Official Site</a> ·
   <a href="https://docx-editor.pages.dev/examples/demo/">Online Demo</a> ·
+  <a href="https://docx-editor.pages.dev/examples/integration/">Integration Demo</a> ·
   <a href="https://docx-editor.pages.dev/docs/">Docs</a> ·
+  <a href="https://docx-editor.pages.dev/downloads/word-editor-public-beta.zip">Download Beta</a> ·
   <a href="https://github.com/flyfish-dev/word-editor/issues/new/choose">Feedback & Samples</a> ·
   <a href="https://dev.flyfish.group/shop">Flyfish Shop</a>
 </p>
@@ -72,8 +74,10 @@ allowedOrigins: http://127.0.0.1:* / http://localhost:*
 | --- | --- |
 | Official Site | [docx-editor.pages.dev](https://docx-editor.pages.dev/) |
 | Online Demo | [docx-editor.pages.dev/examples/demo](https://docx-editor.pages.dev/examples/demo/) |
+| Integration Demo | [docx-editor.pages.dev/examples/integration](https://docx-editor.pages.dev/examples/integration/) |
 | Docs | [docx-editor.pages.dev/docs](https://docx-editor.pages.dev/docs/) |
 | Public Beta Repository | [github.com/flyfish-dev/word-editor](https://github.com/flyfish-dev/word-editor) |
+| Public Beta Download | [docx-editor.pages.dev/downloads/word-editor-public-beta.zip](https://docx-editor.pages.dev/downloads/word-editor-public-beta.zip) |
 | Flyfish Shop | [dev.flyfish.group/shop](https://dev.flyfish.group/shop) |
 
 ## Purchase & Partnership
