@@ -62,9 +62,9 @@ http://127.0.0.1:8789/
 
 ```text
 brand: Flyfish Word Editor
-buildId: local-wasm-20260630075500
-payloadSha256: 7e8b99e560c523c9a66797156bd55615383021191ad7bb638f6bbfb01332121b
-有效期: 2026-07-30T07:55:06.000Z
+buildId: local-wasm-20260705154244
+payloadSha256: 678df35b58b5ec04a22e6b291798d7c3d85f1788b4161ee6e334f6fa04f27b00
+有效期: 2026-07-19T15:42:48.000Z
 允许访问: http://127.0.0.1:* / http://localhost:*
 ```
 

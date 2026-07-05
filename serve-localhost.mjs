@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import { createServer } from "node:http";
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL(".", import.meta.url)));
 const port = toPort(process.env.PORT || readFlag("--port", "-p"), 8789);
 const host = readFlag("--host", "-h") || process.env.HOST || "127.0.0.1";
+const allowedHosts = resolveAllowedHosts();
 
 const mimeTypes = new Map([
   [".html", "text/html; charset=utf-8"],
@@ -16,11 +17,6 @@ const mimeTypes = new Map([
   [".txt", "text/plain; charset=utf-8"],
   [".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"],
   [".svg", "image/svg+xml"],
-  [".png", "image/png"],
-  [".jpg", "image/jpeg"],
-  [".jpeg", "image/jpeg"],
-  [".webp", "image/webp"],
-  [".ico", "image/x-icon"],
   [".wasm", "application/wasm"],
 ]);
 
@@ -55,7 +51,8 @@ const server = createServer((req, res) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`Flyfish Word Editor local WASM preview: http://${host}:${port}/`);
+  console.log(`word-editor sealed WASM package: http://${host}:${port}/`);
+  console.log(`Allowed Host headers: ${[...allowedHosts].join(", ")}`);
   console.log("Press Ctrl+C to stop.");
 });
 
@@ -84,7 +81,36 @@ function send(res, status, body, headers = {}) {
 function requestHostAllowed(req) {
   const header = String(req.headers.host || "").trim().toLowerCase();
   const hostName = header.startsWith("[") ? header.slice(1, header.indexOf("]")) : header.split(":")[0];
-  return hostName === "localhost" || hostName === "127.0.0.1";
+  return allowedHosts.has(hostName);
+}
+
+function resolveAllowedHosts() {
+  const hosts = new Set(["localhost", "127.0.0.1"]);
+  const envHosts = String(process.env.WORD_EDITOR_PACKAGE_ALLOWED_HOSTS || "")
+    .split(/[\n,]+/)
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+  for (const value of envHosts) hosts.add(value);
+  const metadataPath = join(root, "word-editor-local-wasm-release.json");
+  if (existsSync(metadataPath)) {
+    try {
+      const metadata = JSON.parse(readFileSync(metadataPath, "utf8"));
+      for (const origin of metadata.allowedOrigins || []) {
+        const host = originHost(origin);
+        if (host) hosts.add(host);
+      }
+    } catch {}
+  }
+  return hosts;
+}
+
+function originHost(origin) {
+  try {
+    const normalized = String(origin || "").replace(/:\*$/, "");
+    return new URL(normalized).hostname.toLowerCase();
+  } catch {
+    return "";
+  }
 }
 
 function resolveRequestPath(urlPath) {

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#185abd" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <title>Flyfish Word Editor local WASM preview</title>
+  <title>word-editor sealed WASM demo</title>
   <style>
     html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #e6e6e6; }
     word-editor { display: block; width: 100vw; height: 100vh; }
@@ -53,35 +53,6 @@
       height: 20px;
       border-radius: 3px;
       background: rgba(255,255,255,.22);
-    }
-    .language-switch {
-      position: fixed;
-      top: 8px;
-      right: 148px;
-      z-index: 10000;
-      display: inline-grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.38);
-      border-radius: 6px;
-      background: rgba(15,43,99,.28);
-      box-shadow: 0 6px 18px rgba(15,23,42,.18);
-      font: 12px/1 "Segoe UI", system-ui, sans-serif;
-    }
-    .language-switch button {
-      min-width: 52px;
-      height: 24px;
-      border: 0;
-      padding: 0 8px;
-      color: rgba(255,255,255,.86);
-      background: transparent;
-      cursor: pointer;
-      font: inherit;
-      font-weight: 600;
-    }
-    .language-switch button[aria-pressed="true"] {
-      color: #185abd;
-      background: #fff;
     }
     .tabs {
       display: flex;
@@ -182,15 +153,6 @@
       0% { transform: translateX(-120%); }
       100% { transform: translateX(240%); }
     }
-    @media (max-width: 720px) {
-      .language-switch {
-        top: 42px;
-        right: 10px;
-      }
-      .language-switch button {
-        min-width: 48px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -198,31 +160,21 @@
     <div class="boot" role="status" aria-live="polite">
       <div class="titlebar">
         <span class="mark" aria-hidden="true">W</span>
-        <span class="title" data-i18n="titlebar">Flyfish Word Editor local WASM preview</span>
+        <span class="title">word-editor sealed WASM demo</span>
         <span class="actions" aria-hidden="true"><span></span><span></span></span>
       </div>
-      <div class="tabs" aria-hidden="true">
-        <span data-i18n="tabHome">Home</span>
-        <span data-i18n="tabInsert">Insert</span>
-        <span data-i18n="tabLayout">Layout</span>
-        <span data-i18n="tabReview">Review</span>
-        <span data-i18n="tabView">View</span>
-      </div>
+      <div class="tabs" aria-hidden="true"><span>Home</span><span>Insert</span><span>Layout</span><span>Review</span><span>View</span></div>
       <div class="ribbon" aria-hidden="true"><span class="group"></span><span class="group"></span><span class="group"></span><span class="group"></span></div>
       <div class="stage">
         <div class="card">
           <span class="mark" aria-hidden="true">W</span>
-          <span><strong data-i18n="bootTitle">Preparing Flyfish Word Editor</strong><small data-i18n="bootSubtitle">The editor core is loaded from the sealed local WASM public beta.</small></span>
+          <span><strong>Preparing sealed runtime</strong><small>The editor core is loaded from this sealed WASM package.</small></span>
           <span class="progress" aria-hidden="true"><span></span></span>
         </div>
       </div>
       <div class="status" aria-hidden="true"></div>
     </div>
   </word-editor>
-  <div class="language-switch" data-language-switch aria-label="Language switch">
-    <button type="button" data-lang-option="zh-CN" aria-pressed="false">中文</button>
-    <button type="button" data-lang-option="en" aria-pressed="false">English</button>
-  </div>
   <div id="toast" class="toast" hidden></div>
   <script type="module" src="/local-wasm-loader.mjs"></script>
 </body>
