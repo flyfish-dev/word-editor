@@ -62,9 +62,9 @@ Current expanded build:
 
 ```text
 brand: Flyfish Word Editor
-buildId: local-wasm-20260717005416
-payloadSha256: 41baba0ab494340210da1bba7c2d9f5b83528125a421335caebb0011ece32679
-expiresAt: 2026-07-31T00:54:23.000Z
+buildId: local-wasm-20260717034737
+payloadSha256: 35bdaae03f5dfaa28178c4b4ac49f9d15336be72957f27c84a4fd6be778e8430
+expiresAt: 2026-07-31T03:47:42.000Z
 allowedOrigins: http://127.0.0.1:* / http://localhost:*
 ```
 
