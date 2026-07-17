@@ -14,6 +14,7 @@ const mimeTypes = new Map([
   [".js", "text/javascript; charset=utf-8"],
   [".mjs", "text/javascript; charset=utf-8"],
   [".json", "application/json; charset=utf-8"],
+  [".css", "text/css; charset=utf-8"],
   [".txt", "text/plain; charset=utf-8"],
   [".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"],
   [".svg", "image/svg+xml"],
@@ -116,6 +117,12 @@ function originHost(origin) {
 function resolveRequestPath(urlPath) {
   const cleanPath = decodeURIComponent(urlPath.split("?")[0] || "/");
   if (cleanPath === "/") return join(root, "index.html");
+  if (cleanPath === "/assets/word-editor-boot-v1.css") {
+    const packagedAsset = join(root, "assets/word-editor-boot-v1.css");
+    if (existsSync(packagedAsset)) return packagedAsset;
+    const workspaceAsset = resolve(root, "../assets/word-editor-boot-v1.css");
+    if (existsSync(workspaceAsset)) return workspaceAsset;
+  }
   const normalized = normalize(cleanPath).replace(/^([/\\])+/, "");
   const segments = normalized.split(/[\\/]+/).filter(Boolean);
   const lower = normalized.toLowerCase();
